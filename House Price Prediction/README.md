@@ -153,7 +153,7 @@ Advanced Regression Techniques to predict Sale Price of House based on certain F
 - Project is well Documented in Jupyter Notebook, with markdowns, code and output graphs and plots
 - Please Refer Below Links For Documentation
     - [Kaggle Notebook](https://www.kaggle.com/jaysrivastav/xgb-gpu-with-optuna-and-kfold-house-price-predict)
-    - [Github Notebook](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/House%20Price%20Prediction
+    - [Github Notebook](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/House%20Price%20Prediction)
 
 
 
@@ -169,7 +169,7 @@ Advanced Regression Techniques to predict Sale Price of House based on certain F
 
 - The App Takes Input as Features From user In Web Form and Stores The Features with Prediction From Model Into SQLite Data Base and Then Displays it to User in a Tabular Format
 
-## [Github Link](https://github.com/DhirendraSrivastav007/House-Price-Prediction-Deployment)
+## [Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/House%20Price%20Prediction/Flask%20API)
 
 ## [Web App Link](https://house-price-prediction-dploy.herokuapp.com/)
 
