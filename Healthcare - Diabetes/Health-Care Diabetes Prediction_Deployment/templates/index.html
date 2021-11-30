@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+
+
+<div class="container-sm my-3 ">
+  <h2> Add Records</h2>
+  <form action="{{url_for("predict")}}" method="POST">
+
+
+    <div class="form-control mb-2 my-2">
+      <label for="Pregnancies" class="form-label">Number Of times Pregnant</label>
+      <input type="range" class="form-range" value="0" min="0" max="17" name='Pregnancies' id="Pregnancies"
+        oninput="amount.value = this.value">
+      <br>
+      <output id="amount" name="amount" for="2ndFlrSF-range">0 - "times"</output>
+    </div>
+
+    <div class="form-control  mb-2 my-2">
+      <label for="Glucose" class="form-label">Plasma glucose concentration , 2 hours in an oral glucose tolerance
+        test</label>
+      <input type="range" class="form-range" value="0" min="44" max="199" name='Glucose' id="Glucose"
+        oninput="Glucose_amount.value = this.value">
+      <br>
+      <output id="Glucose_amount" name="Glucose_amount" for="Glucose">0 - "Units"</output>
+    </div>
+
+    <div class="form-control mb-2 my-2">
+      <label for="BloodPressure" class="form-label">Diastolic blood pressure (mm Hg)</label>
+      <input type="range" class="form-range" value="0" min="24" max="122" name='BloodPressure' id="BloodPressure"
+        oninput="BloodPressure_amount.value = this.value">
+      <br>
+      <output id="BloodPressure_amount" name="BloodPressure_amount" for="BloodPressure">0 - "Units"</output>
+    </div>
+
+    <div class="form-control mb-2 my-2">
+      <label for="SkinThickness	" class="form-label">Skin Thickness (Triceps skin fold thickness (mm))</label>
+      <input type="range" class="form-range" value="0" min="7" max="99" name='SkinThickness' id="SkinThickness"
+        oninput="SkinThickness_amount.value = this.value">
+      <br>
+      <output id="SkinThickness_amount" name="SkinThickness_amount" for="SkinThickness">0 - "Units"</output>
+    </div>
+
+    <div class="form-control mb-2 my-2">
+      <label for="Insulin" class="form-label">Insulin Levels (2-Hour serum insulin (mu U/ml))</label>
+      <input type="range" class="form-range" value="0" min="334" max="5642" name='Insulin' id="Insulin"
+        oninput="Insulin_amount.value = this.value">
+      <br>
+      <output id="Insulin_amount" name="Insulin_amount" for="Insulin">0 - "Units"</output>
+    </div>
+
+    <div class="form-control mb-2 my-2">
+      <label for="BMI" class="form-label">Body mass index (weight in kg/(height in m)^2)</label>
+      <input type="range" class="form-range" value="0" min="18.2" max="67.1" step=0.1 name='BMI' id="BMI"
+        oninput="BMI_amount.value = this.value">
+      <br>
+      <output id="BMI_amount" name="BMI_amount" for="BMI">0 - "Units"</output>
+    </div>
+
+    <div class="form-control mb-2 my-2">
+      <label for="DiabetesPedigreeFunction" class="form-label">Diabetes pedigree function</label>
+      <input type="range" class="form-range" value="0" min="0.078" max="2.42" step=0.001 name='DiabetesPedigreeFunction'
+        id="DiabetesPedigreeFunction" oninput="DiabetesPedigreeFunction_amount.value = this.value">
+      <br>
+      <output id="DiabetesPedigreeFunction_amount" name="DiabetesPedigreeFunction_amount"
+        for="DiabetesPedigreeFunction">0 - "Units"</output>
+    </div>
+
+    <div class="form-control mb-2 my-2">
+      <label for="Age" class="form-label">Age</label>
+      <input type="range" class="form-range" value="0" min="21" max="81" name='Age' id="Age"
+        oninput="Age_amount.value = this.value">
+      <br>
+      <output id="Age_amount" name="Age_amount" for="Age">0 - "Units"</output>
+    </div>
+
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-dark my-2" type="submit">Predict</button>
+    </div>
+  </form>
+</div>
+
+<div class="container-sm my-3">
+  <h2>Predictions</h2>
+
+  <div class="alert alert-dark" role="alert">
+    {{Prediction}}
+  </div>
+</div>
+
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+{% endblock body %}
