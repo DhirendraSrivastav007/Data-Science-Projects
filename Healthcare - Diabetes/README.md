@@ -17,8 +17,8 @@ Build a model to accurately predict whether the patients in the dataset have dia
   * [4. Tech Stack](#4-tech-stack)
   * [5. Documentation](#5-documentation)
   * [6. Deployment](#6-deployment)
-  * [[Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/Healthcare%20-%20Diabetes/Health-Care%20Diabetes%20Prediction_Deployment]
-  * [[Web App Link](https://house-price-prediction-dploy.herokuapp.com/)]
+  * [[Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/Healthcare%20-%20Diabetes/Health-Care%20Diabetes%20Prediction_Deployment)]
+  * [[Web App Link](https://diabetes-prediction-333614.el.r.appspot.com/)]
     + [This is How Working App Should Look Like](#this-is-how-working-app-should-look-like)
 
 
@@ -189,8 +189,8 @@ Build a model to accurately predict whether the patients in the dataset have dia
 ## 5. Documentation
 - Project is well Documented in Jupyter Notebook, with markdowns, code and output graphs and plots
 - Please Refer Below Links For Documentation
-    - [Kaggle Notebook](https://www.kaggle.com/jaysrivastav/xgb-gpu-with-optuna-and-kfold-house-price-predict)
-    - [Github Notebook](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/House%20Price%20Prediction)
+    - [Kaggle Notebook](https://www.kaggle.com/jaysrivastav/pima-indians-diabetes)
+    - [Github Notebook](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/pima-indians-diabetes.ipynb)
 
 
 
@@ -206,9 +206,9 @@ Build a model to accurately predict whether the patients in the dataset have dia
 
 - Cloud : 	![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
 
-## [Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/House%20Price%20Prediction/Flask%20API)
+## [Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/Healthcare%20-%20Diabetes/Health-Care%20Diabetes%20Prediction_Deployment)
 
-## [Web App Link](https://house-price-prediction-dploy.herokuapp.com/)
+## [Web App Link](https://diabetes-prediction-333614.el.r.appspot.com/)
 
 
 
