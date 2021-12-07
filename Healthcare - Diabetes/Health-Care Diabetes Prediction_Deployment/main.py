@@ -16,6 +16,10 @@ model = pickle.load(open('pima_model', 'rb'))
 def Home():
     return render_template('index.html')
 
+@app.route('/analysis', methods=['GET', 'POST'])
+def analysis():
+    return render_template('analysis.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     Features = [float(x) for x in request.form.values()]
