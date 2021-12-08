@@ -25,7 +25,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 
 <hr>
 
-## 1. Aim of Project
+# 1. Aim of Project
 
 - The main Objective of this Project is to Explore Basic Natural Language Processing Using Machine Learning
 
@@ -37,13 +37,15 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 <hr>
 
 
-## 2. Problem Statement
+# 2. Problem Statement
 
-- 
+- Sentiment Analysis on Wikipedia Comments
 
-- 
+- As a data scientist at Wikipedia who will help Wikipedia to build a predictive model that identifies toxic comments in the discussion and marks them for cleanup by using NLP     and machine learning. Post that, help identify the top terms from the toxic comments
 
-- Device Strategy for Model Building and Selecting Best Model
+- Web scraping Data Using Beautiful Soup
+
+- Cleaning up the Data (Text Preprocessing) and vectorizing it for model building
 
 - Serve the Model on GCP (PaaS) using Flask API
 
@@ -51,121 +53,83 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 
 <hr>
 
-## 3. Work Flow:
+# 3. Work Flow:
 
    ### 1. Acquire the Data
    - Data is Web Scraped using Beautiful Soup from Wikipedia Comments on Article
-   - Data is Cleaned using regular Expression to remove Ip Address, HTML Tags and URls 
+   
+   - Data is Cleaned using regular Expression to remove Ip Address, HTML Tags and URls
+   
+   - Converting the Raw Text Into Document Term Matrix For Model Building
    
    
    
    
-  ### 2. Data Exploration
-   - I have analysed each features and in **five number summary** , i was able so notice someting strange..
+  ### 2. Text Preprocessing
   
-  ![Five number Summary](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/__results___files/Five%20Number%20Summary.png)
-  
-  <br>
-   
-   - ### **Distribution Of The Data**
-   
-  ![Distribution](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/__results___files/__results___14_0.png)
-  
-  - <font color = "blue" size=4.8px> <b>Interpretation : </b></font>
+  - <font color = "blue" size=4.8px> <b>I Have Dicovered Few Noises in Textual data : </b></font>
 
-      * <font color = "red" size=4.8px>Most Features are Not Normally Distrubuted</font>
-      * <font color = "red" size=4.8px>Thus we will Impute The Data Accordingly</font>
-      * <font color = "red" size=4.8px>Also We Will use Non-Linear Algorithms which doesnt expects Normal Distribution, for eg :- Tree based ensemble Techniques </font>   
+      * <font color = "red" size=4.8px>Texts have some HTML Tags, IP adresses and URLs and Stopwords , we will remove them by Regular Expression : </font>
+       
+        ![Clean_up_Function](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/7e699f5511a41215824917719335d1bfd7c1db9a/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Text_Clean_Up_Function.png)
+      
+      * #### We will Remove Some Contetual Stopwords By Reviewing Top 20 Repeated words
+      
+        ![Contextual_Stop_Words](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/7e699f5511a41215824917719335d1bfd7c1db9a/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Top_20_Words.png)
+      
+        ![Contextual_Stop_Words](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/7e699f5511a41215824917719335d1bfd7c1db9a/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Contextual_Stop_Words.png)   
 
-  - ### **Outliers !**
-
-   ![Outliers](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/__results___files/__results___22_0.png)
-   
-   <br>
   
-  ## **Tableau Analysis**
-  
-![tableau analysis](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/Tableau%20Analysis/Dashboard%201.png)
-   
-   
- - ## Though EDA I have gathered few analytics of Data : - 
-   
-     
-  
-    
-      ### 3. Data  Preprocessing/ Feature Engineering
-     - Missing Value Imputation, According to Data We used Median Knn Imputer for Most Accurate Imputation
+     * We will Use TF-IDF Vectorizer to Vectorize Our Textual Data
 
 
 
 
 <br>
 
-  ### 4. Devicing Strategy For Modeling
+  ### 3. Devicing Strategy For Modeling
+      
+   * We will Use **Naive Bayes** Model As it Supports **partial_fit** For Model **Retraining** Also we its simple and Works well on Texual Data
    
- * <p style = "color:b; font-size:150%; font-weight:bold; text-decoration: underline; text-decoration-style: double;"> So Far We have Arrived with Following Analysis : - </p>   
-    
- 
-   * Data is Skewed and has Lots of Outliers
-   * Data is Imbalanced
-   * Features Are Having Low Correlation with Target Variable
-   * No of Samples Are too low So We Cannot Use Hold Out Method Of Cross Validation, we need to use Kfolds And Also Class Proportion is Imbalanced so We need to Use Stratified Kfold For Our Cross Validation Analysis With Minimum 10 FOLDs
-
-
-* <p style = "color:r; font-size:120%; font-weight:bold"> By these Inferences Its Evident that we should Use Tree Based Ensemble Techniques Which Can Handle Outliers, Skewed Data, Data Imbalances and Can Learn From Weak Learners
-
+   * We Will Run Bayesian Optimization For Hyperparameter Tuning Of TF-IDF Vectorizer And Naive Bayes Model to select best possible Parameters
+   
+   * We will Evaluate the Model Using 10 Fold Cross Validation and We will Choose Metric as F1 score for giving equal importance to recall and precision i.e, Equal Importance        for toxic and non-toxic comments
+   
+  
+<br>
   
   
+  ### 4. Classification Report
   
-  
-  
-  ### 5. Choosing Relevant Metric For Classification
-
- 
- ![Senstivity_Specificity](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/__results___files/Senstivity_Specificity.png)
-  
- ![Metrics](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/__results___files/F-Beta.png)https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/__results___files/F-Beta.png)   
+  ![Contextual_Stop_Words](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/7e699f5511a41215824917719335d1bfd7c1db9a/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Classification_Report.png)
 
   
   
   
   
 <br>
+  
+  ### 5. Viewing Most prominent terms in the toxic comments Classified By our Model
+  
+   ![Top_Prominent_Comments](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/7e699f5511a41215824917719335d1bfd7c1db9a/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Top_Toxic_Comments.png)
    
-  ### 7. Evaluating Different Models
    
-|  Model 	|   F-1 Score 	| 
-|--:	|--:	          |
-| LGBM |   72.03 %	 |      
-| Random_Forest | 70.0 %	|
-| KNN | 64.0 %	| 
-| XGboost | 63.33 %	| 
+   
+  #### 6. Developing a Model Pipeline traning it and saving it in pickle file
+  
+  
+  #### 7. Adding Model Retraining Feature By Utilizing New Labelled Data Being Corrected By User and using ***partial_fit*** Method of Our model
+  
+  #### 8. Saving The new Data Into CSV File For Future Model Retraining, To Avoid any ***Model Drift***
+  
+  
+  #### 9. Serving the Web app On GCP with Flask API
+  
+    
+    
+<hr>   
 
-  
-  
-  
 
-
-  ### 8. Selecting Model With Best Score And Predicting the unseen Test data to Model
-  
-   - <p style = "color:red; font-size:120%; font-weight:bold">Best Performing Model In terms of F1-Score is LGBM, Because it has Ability to Deal with Imbalanced Data Set Better than any Model</p>
-   - <p style = "color:red; font-size:120%; font-weight:bold">Knn turns out to be worst of all, Because it wasnt suitable to data as it is Linear Model and Our data is Non-Linear </p>
-   
-   
-   
-   
-  ### 9. Developing a Model Pipeline traning it and saving it in pickle file
-  
-  
-  
-  
-  ### 10. Serving the Web app On Cloud (PaaS) with Flask API
-    
-    
-    
-    
-    
-<hr>    
     
 ## 4. Tech Stack
 
@@ -180,10 +144,10 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 
 **Visualization:** ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white) **matplotlib,** **Seaborn**
 
-**Data Wrangling:** ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white)
+**Data Wrangling:** ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white) , **nltk**
 
 **Modeling:** ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
-**xgboost**
+
 
 
 <hr>
@@ -191,8 +155,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 ## 5. Documentation
 - Project is well Documented in Jupyter Notebook, with markdowns, code and output graphs and plots
 - Please Refer Below Links For Documentation
-    - [Kaggle Notebook](https://www.kaggle.com/jaysrivastav/pima-indians-diabetes)
-    - [Github Notebook](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/Healthcare%20-%20Diabetes/pima-indians-diabetes.ipynb)
+    - [Github Notebook](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/7e699f5511a41215824917719335d1bfd7c1db9a/NLP-%20Wikipedia%20Toxicity/Wikipedia%20Toxicity%20Project.ipynb)
 
 
 
@@ -208,7 +171,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 
 - Cloud : 	![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
 
-## [Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/Healthcare%20-%20Diabetes/Health-Care%20Diabetes%20Prediction_Deployment)
+## [Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/NLP-%20Wikipedia%20Toxicity)
 
 ## [Web App Link](https://diabetes-prediction-333614.el.r.appspot.com/)
 
@@ -229,7 +192,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
   pip3 install -r requirements.txt
 
 # To run App
-  python app.py
+  python main.py
 ```
 
 <hr>
