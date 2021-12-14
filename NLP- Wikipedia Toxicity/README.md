@@ -1,4 +1,4 @@
-<img src="https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Wikipedia%20Toxicity.jpeg" align="center" height="200" width = "800" >
+<img src="https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/e615c348326b7c951e904e5c861cec6a4017ca4b/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/Wikipedia%20Toxicity%20Image.jpeg" align="center" height="200" width = "800" >
 
 <hr>
 
