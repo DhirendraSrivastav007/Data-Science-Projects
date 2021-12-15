@@ -235,7 +235,7 @@ Build a model to accurately predict whether the patients in the dataset have dia
 
 ### This is How Working App Should Look Like
 
-![Project Demo](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/House%20Price%20Prediction/Flask%20API/static/Project_Demo.gif)
+![Project Demo](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/1ed8b3db906d6f939bac73fe49aefd8e3e54fa66/Healthcare%20-%20Diabetes/Health-Care%20Diabetes%20Prediction_Deployment/static/Diabestes%20Gif.gif)
 
 
 
