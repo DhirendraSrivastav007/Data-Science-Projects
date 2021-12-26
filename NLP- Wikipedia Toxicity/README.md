@@ -18,7 +18,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
   * [5. Documentation](#5-documentation)
   * [6. Deployment](#6-deployment)
   * [[Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/NLP-%20Wikipedia%20Toxicity)]
-  * [[Web App Link](https://diabetes-prediction-333614.el.r.appspot.com/)]
+  * [[Web App Link](https://wikipedia-toxicity.el.r.appspot.com/)]
     + [This is How Working App Should Look Like](#this-is-how-working-app-should-look-like)
 
 
@@ -173,7 +173,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 
 ## [Github Link](https://github.com/DhirendraSrivastav007/Data-Science-Projects/tree/master/NLP-%20Wikipedia%20Toxicity)
 
-## [Web App Link](https://diabetes-prediction-333614.el.r.appspot.com/)
+## [Web App Link](https://wikipedia-toxicity.el.r.appspot.com/)
 
 
 
