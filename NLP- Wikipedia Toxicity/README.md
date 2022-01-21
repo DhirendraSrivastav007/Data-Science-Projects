@@ -200,7 +200,7 @@ Build a model to accurately predict whether the comments of wikipedia are toxic 
 
 ### This is How Working App Should Look Like
 
-![Project Demo](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/House%20Price%20Prediction/Flask%20API/static/Project_Demo.gif)
+![Project Demo](https://github.com/DhirendraSrivastav007/Data-Science-Projects/blob/master/NLP-%20Wikipedia%20Toxicity/Project_Deployment/static/ezgif.com-gif-maker.gif)
 
 
 
